@@ -1,14 +1,23 @@
 import * as React from 'react';
-import {Button, Text, View} from 'react-native';
+import {Container, Text} from 'native-base';
+import {Col, Row, Grid} from 'react-native-easy-grid';
 import HomeScreenNav from './HomeScreenNav';
 
 const HomeScreen = ({navigation}) => {
   return (
-    <View>
-      <HomeScreenNav navigation={navigation} />
-      <Text>Home screen</Text>
-      <Text>Test</Text>
-    </View>
+    <Container>
+      <Grid>
+        <HomeScreenNav navigation={navigation} />
+        <Row>
+          <Col>
+            <Text>Home screen</Text>
+          </Col>
+          <Col>
+            <Text>Home screen</Text>
+          </Col>
+        </Row>
+      </Grid>
+    </Container>
   );
 };
 
