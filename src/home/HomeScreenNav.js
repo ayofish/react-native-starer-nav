@@ -1,34 +1,23 @@
 import React from 'react';
-import {View} from 'react-native';
-import {Container, Header, Button, Text} from 'native-base';
-import {Col, Grid} from 'react-native-easy-grid';
+import {Header, Button, Text, Icon, Left, Right} from 'native-base';
 
 const HomeScreenNav = ({navigation}) => {
   return (
-    <View>
-      <Container>
-        {/* <Header /> */}
-        <Grid>
-          <Col>
-            <Button
-              small
-              bordered
-              onPress={() => navigation.navigate('Details')}>
-              <Text>Light</Text>
-            </Button>
-          </Col>
-
-          <Col>
-            <Button
-              small
-              bordered
-              onPress={() => navigation.navigate('Details')}>
-              <Text>Dark</Text>
-            </Button>
-          </Col>
-        </Grid>
-      </Container>
-    </View>
+    <Header>
+      <Left>
+        <Button transparent onPress={() => navigation.navigate('DrawerOpen')}>
+          <Icon name="menu" />
+        </Button>
+      </Left>
+      <Right>
+        <Button small bordered onPress={() => navigation.navigate('Details')}>
+          <Text>Light</Text>
+        </Button>
+        <Button small bordered onPress={() => navigation.navigate('Details')}>
+          <Text>Dark</Text>
+        </Button>
+      </Right>
+    </Header>
   );
 };
 
