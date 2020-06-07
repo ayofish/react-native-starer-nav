@@ -1,24 +1,21 @@
 import * as React from 'react';
-import {Container, Text, Content} from 'native-base';
-import {Col, Row, Grid} from 'react-native-easy-grid';
-import HomeScreenNav from './HomeScreenNav';
+import {Container, Text, Content, Button} from 'native-base';
+import HeaderNav from '../commons/HeaderNav';
 
-const HomeScreen = ({navigation}) => {
+function HomeScreen({navigation}) {
+  const title = 'Home';
   return (
     <Container>
-      <HomeScreenNav navigation={navigation} />
-      <Content>
-        <Grid>
-          <Col>
-            <Text>Home screen</Text>
-          </Col>
-          <Col>
-            <Text>Home screen</Text>
-          </Col>
-        </Grid>
+      <HeaderNav name={title} navigation={navigation} />
+      <Content padder>
+        <Button
+          onPress={() => navigation.navigate('Notifications')}
+          title="Go to notifications">
+          <Text>Notifications</Text>
+        </Button>
       </Content>
     </Container>
   );
-};
+}
 
 export default HomeScreen;
