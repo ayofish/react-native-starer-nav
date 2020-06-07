@@ -17,8 +17,6 @@ import {
   Icon,
   Right,
 } from 'native-base';
-import HomeScreen from './src/commons/HeaderNav';
-import {useWindowDimensions} from 'react-native';
 
 function NotificationsScreen({navigation}) {
   return (
@@ -52,7 +50,6 @@ function CustomDrawerContent(props) {
         </Right>
       </Header>
       <DrawerItemList {...props} />
-      <DrawerItem label="Help" onPress={() => alert('Link to help')} />
       <DrawerItem
         label="Notifications"
         onPress={() => props.navigation.navigate('Notifications')}
