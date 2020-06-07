@@ -12,7 +12,11 @@ const HeaderNav = ({name, navigation}) => {
       <Body>
         <Title>{name}</Title>
       </Body>
-      <Right />
+      <Right>
+        <Button transparent onPress={() => navigation.toggleDrawer()}>
+          <Icon name="settings" />
+        </Button>
+      </Right>
     </Header>
   );
 };

@@ -8,15 +8,8 @@ import HomeScreenRouter from './src/home/HomeScreenRouter';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {NavigationContainer} from '@react-navigation/native';
 // const Tab = createBottomTabNavigator();
-import {
-  Content,
-  Button,
-  Container,
-  Text,
-  Header,
-  Icon,
-  Right,
-} from 'native-base';
+import {Content, Button, Container, Text, Header} from 'native-base';
+import Sidebar from './src/commons/Sidebar';
 
 function NotificationsScreen({navigation}) {
   return (
@@ -33,36 +26,10 @@ function NotificationsScreen({navigation}) {
 
 const Drawer = createDrawerNavigator();
 
-import {
-  DrawerContentScrollView,
-  DrawerItemList,
-  DrawerItem,
-} from '@react-navigation/drawer';
-
-function CustomDrawerContent(props) {
-  return (
-    <DrawerContentScrollView {...props}>
-      <Header>
-        <Right>
-          <Button transparent onPress={() => props.navigation.toggleDrawer()}>
-            <Icon name="arrow-back" />
-          </Button>
-        </Right>
-      </Header>
-      <DrawerItemList {...props} />
-      <DrawerItem
-        label="Notifications"
-        onPress={() => props.navigation.navigate('Notifications')}
-      />
-    </DrawerContentScrollView>
-  );
-}
-
 export default function App() {
   return (
     <NavigationContainer>
-      <Drawer.Navigator
-        drawerContent={(props) => <CustomDrawerContent {...props} />}>
+      <Drawer.Navigator drawerContent={(props) => <Sidebar {...props} />}>
         <Drawer.Screen name="Home" component={HomeScreenRouter} />
         <Drawer.Screen name="Notifications" component={NotificationsScreen} />
       </Drawer.Navigator>
