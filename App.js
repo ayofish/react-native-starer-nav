@@ -1,10 +1,8 @@
 import 'react-native-gesture-handler';
 import React from 'react';
-// import {NavigationContainer} from '@react-navigation/native';
-// import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-// import HomeStackScreen from './src/home/HomeStackScreen';
 // import SettingsStackScreen from './src/settings/SettingsStackScreen';
 import HomeScreenRouter from './src/home/HomeScreenRouter';
+import ClubScreenRouter from './src/club/ClubScreenRouter';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {NavigationContainer} from '@react-navigation/native';
 // const Tab = createBottomTabNavigator();
@@ -31,6 +29,7 @@ export default function App() {
     <NavigationContainer>
       <Drawer.Navigator drawerContent={(props) => <Sidebar {...props} />}>
         <Drawer.Screen name="Home" component={HomeScreenRouter} />
+        <Drawer.Screen name="Club" component={ClubScreenRouter} />
         <Drawer.Screen name="Notifications" component={NotificationsScreen} />
       </Drawer.Navigator>
     </NavigationContainer>
