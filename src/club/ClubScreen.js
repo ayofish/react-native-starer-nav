@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import {Container, Text, Content, Button} from 'native-base';
 import HeaderNav from '../commons/HeaderNav';
 
