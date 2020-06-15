@@ -9,4 +9,10 @@
 - Delete ios folder
 - Delete android folder
 - npx react-native init <nameofapplication>
+- copy package.json from here
+ 
+ 
+ follow:
+ npm install
+react-native link
  
