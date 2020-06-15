@@ -13,6 +13,6 @@
  
  
  follow:
- npm install
+ yarn install
 react-native link
  
